@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="None">
+        
+        
+        <link rel="shortcut icon" href="./img/favicon.ico">
+        <title>Monad</title>
+        <link href="./css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="./css/font-awesome-4.5.0.css" rel="stylesheet">
+        <link href="./css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="./css/highlight.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="./js/jquery-1.10.2.min.js"></script>
+        <script src="./js/bootstrap-3.0.3.min.js"></script>
+        <script src="./js/highlight.pack.js"></script> 
+    </head>
+
+    <body class="homepage">
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href=".">Monad</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                    <li class="active">
+                        <a href=".">Home</a>
+                    </li>
+                    <li >
+                        <a href="about/">About</a>
+                    </li>
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                    <li class="disabled">
+                        <a rel="next" >
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="about/">
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#welcome-to-api-documentation-monad">Welcome to API Documentation Monad</a></li>
+        <li class="main "><a href="#general-token">General Token</a></li>
+        <li class="main "><a href="#login">Login</a></li>
+        <li class="main "><a href="#user-details">User Details</a></li>
+        <li class="main "><a href="#sending-money">Sending Money</a></li>
+            <li><a href="#check-receiver">check receiver</a></li>
+            <li><a href="#transfer">Transfer</a></li>
+        <li class="main "><a href="#request-money">Request Money</a></li>
+            <li><a href="#check-receiver_1">check receiver</a></li>
+            <li><a href="#request">Request</a></li>
+        <li class="main "><a href="#status-code">Status Code</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="welcome-to-api-documentation-monad">Welcome to API Documentation Monad</h1>
+<p>This is a simple design and documentation API Monad</p>
+<h1 id="general-token">General Token</h1>
+<p>Get general access token to access API</p>
+<p><span class="label label-primary">POST</span>
+<div class="alert alert-success" role="alert">http://127.0.0.1:8000/general-token</div></p>
+<table>
+    <tr>
+        <th>Field</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Request</th>
+    </tr>
+    <tr>
+        <td>client_secret</td>
+        <td>String</td>
+        <td>Client secret from monad</td>
+        <td>Header</td>
+    </tr>
+</table>
+
+<pre><code>{
+    "diagnostic": {
+        "status":200,
+        "description":"success"
+    },
+    "response": {
+        "access_token":"khgsdhgsdkjfgiojijigjsfkjgildfjgfildgjl",
+    }
+}
+</code></pre>
+<h1 id="login">Login</h1>
+<p><span class="label label-primary">POST</span>
+<div class="alert alert-success" role="alert">http://127.0.0.1:8000/login</div></p>
+<table>
+    <tr>
+        <th>Field</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Request</th>
+    </tr>
+    <tr>
+        <td>access_token</td>
+        <td>String</td>
+        <td>Access token from general token</td>
+        <td>Header</td>
+    </tr>
+    <tr>
+        <td>username</td>
+        <td>String</td>
+        <td>Username</td>
+        <td>Header</td>
+    </tr>
+    <tr>
+        <td>password</td>
+        <td>String</td>
+        <td>Password</td>
+        <td>Header</td>
+    </tr>
+</table>
+
+<pre><code>{
+    "diagnostic":{
+        "status":200,
+        "description":"success"
+    },
+    "response":{
+        "type":"Bearer",
+        "access_token":"JfdjkfhIIDFDbfdjsdfs",
+    }
+}
+</code></pre>
+<h1 id="user-details">User Details</h1>
+<p><span class="label label-primary">GET</span>
+<div class="alert alert-success" role="alert">http://127.0.0.1:8000/user-details</div></p>
+<table>
+    <tr>
+        <th>Field</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Request</th>
+    </tr>
+    <tr>
+        <td>Authorization</td>
+        <td>String</td>
+        <td>Access token login</td>
+        <td>Header</td>
+    </tr>
+</table>
+
+<pre><code>{
+    {
+    "diagnostic":{
+        "status":200,
+        "description":"success"
+    },
+    "response":{
+        "user_id":"CS0001",
+        "identity_type":"KTP",
+        "identity":"5387873485375834",
+        "first_name":"user",
+        "last_name":"user",
+        "place_birth":"jakarta",
+        "date_of_bith":"2017-03-01",
+        "gender":"male",
+        "address": {
+            "country":"Indonesia",
+            "province":"Jakarta",
+            "district":"Cideng",
+            "postal_code":"123456"
+        }
+        "data": {
+            "saldo":1500000,
+            "point":110
+        }
+        "photo":"http://127.0.0.1:8000/user.jpg"
+    }
+}
+</code></pre>
+<h1 id="sending-money">Sending Money</h1>
+<p>Tranfer money to other user</p>
+<h2 id="check-receiver">check receiver</h2>
+<p><span class="label label-primary">GET</span>
+<div class="alert alert-success" role="alert">http://127.0.0.1:8000/check-receiver</div></p>
+<table>
+    <tr>
+        <th>Field</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Request</th>
+    </tr>
+    <tr>
+        <td>Authorization</td>
+        <td>String</td>
+        <td>Access token login</td>
+        <td>Header</td>
+    </tr>
+    <tr>
+        <td>user_id</td>
+        <td>String</td>
+        <td>User id receiver</td>
+        <td>Header</td>
+    </tr>
+    <tr>
+        <td>nominal</td>
+        <td>String</td>
+        <td>Nominal Transfer</td>
+        <td>Header</td>
+    </tr>
+</table>
+
+<pre><code>{
+    {
+    "diagnostic":{
+        "status":200,
+        "description":"success"
+    },
+    "response":{
+        "name_receiver":"User"
+        "nominal_transfer":"1500000"
+    }
+}
+</code></pre>
+<h2 id="transfer">Transfer</h2>
+<p><span class="label label-primary">POST</span>
+<div class="alert alert-success" role="alert">http://127.0.0.1:8000/transfer</div></p>
+<table>
+    <tr>
+        <th>Field</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Request</th>
+    </tr>
+    <tr>
+        <td>Authorization</td>
+        <td>String</td>
+        <td>Access token login</td>
+        <td>Header</td>
+    </tr>
+    <tr>
+        <td>user_id</td>
+        <td>String</td>
+        <td>User id receiver</td>
+        <td>Header</td>
+    </tr>
+    <tr>
+        <td>nominal</td>
+        <td>String</td>
+        <td>Nominal Transfer</td>
+        <td>Header</td>
+    </tr>
+</table>
+
+<pre><code>{
+    {
+    "diagnostic":{
+        "status":200,
+        "description":"Transfer success"
+    },
+}
+</code></pre>
+<h1 id="request-money">Request Money</h1>
+<p>Request money from other user</p>
+<h2 id="check-receiver_1">check receiver</h2>
+<p><span class="label label-primary">GET</span>
+<div class="alert alert-success" role="alert">http://127.0.0.1:8000/check-receiver</div></p>
+<table>
+    <tr>
+        <th>Field</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Request</th>
+    </tr>
+    <tr>
+        <td>Authorization</td>
+        <td>String</td>
+        <td>Access token login</td>
+        <td>Header</td>
+    </tr>
+    <tr>
+        <td>user_id</td>
+        <td>String</td>
+        <td>User id receiver</td>
+        <td>Header</td>
+    </tr>
+    <tr>
+        <td>nominal</td>
+        <td>String</td>
+        <td>Nominal Transfer</td>
+        <td>Header</td>
+    </tr>
+</table>
+
+<pre><code>{
+    {
+    "diagnostic":{
+        "status":200,
+        "description":"success"
+    },
+    "response":{
+        "name_receiver":"User"
+        "nominal_transfer":"1500000"
+    }
+}
+</code></pre>
+<h2 id="request">Request</h2>
+<p><span class="label label-primary">POST</span>
+<div class="alert alert-success" role="alert">http://127.0.0.1:8000/request</div></p>
+<table>
+    <tr>
+        <th>Field</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Request</th>
+    </tr>
+    <tr>
+        <td>Authorization</td>
+        <td>String</td>
+        <td>Access token login</td>
+        <td>Header</td>
+    </tr>
+    <tr>
+        <td>user_id</td>
+        <td>String</td>
+        <td>User id receiver</td>
+        <td>Header</td>
+    </tr>
+    <tr>
+        <td>nominal</td>
+        <td>String</td>
+        <td>Nominal Transfer</td>
+        <td>Header</td>
+    </tr>
+</table>
+
+<pre><code>{
+    {
+    "diagnostic":{
+        "status":200,
+        "description":"Request success"
+    },
+}
+</code></pre>
+<h1 id="status-code">Status Code</h1>
+<table>
+    <tr>
+        <th>Code</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>200</td>
+        <td>Success</td>
+    </tr>
+    <tr>
+        <td>201</td>
+        <td>Request Failure</td>
+    </tr>
+    <tr>
+        <td>400</td>
+        <td>Bad Request</td>
+    </tr>
+    <tr>
+        <td>404</td>
+        <td>Not Found</td>
+    </tr>
+</table></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>var base_url = '.';</script>
+        <script src="./js/base.js"></script>
+        <script src="./search/require.js"></script>
+        <script src="./search/search.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>&larr;</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>&rarr;</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    </body>
+</html>
+
+<!--
+MkDocs version : 0.17.3
+Build Date UTC : 2018-05-06 17:35:38
+-->

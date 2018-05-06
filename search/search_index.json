@@ -1,0 +1,94 @@
+{
+    "docs": [
+        {
+            "location": "/",
+            "text": "Welcome to API Documentation Monad\n\n\nThis is a simple design and documentation API Monad\n\n\nGeneral Token\n\n\nGet general access token to access API\n\n\nPOST\n\n\nhttp://127.0.0.1:8000/general-token\n\n\n\n    \n\n        \nField\n\n        \nType\n\n        \nDescription\n\n        \nRequest\n\n    \n\n    \n\n        \nclient_secret\n\n        \nString\n\n        \nClient secret from monad\n\n        \nHeader\n\n    \n\n\n\n\n\n{\n    \"diagnostic\": {\n        \"status\":200,\n        \"description\":\"success\"\n    },\n    \"response\": {\n        \"access_token\":\"khgsdhgsdkjfgiojijigjsfkjgildfjgfildgjl\",\n    }\n}\n\n\n\nLogin\n\n\nPOST\n\n\nhttp://127.0.0.1:8000/login\n\n\n\n    \n\n        \nField\n\n        \nType\n\n        \nDescription\n\n        \nRequest\n\n    \n\n    \n\n        \naccess_token\n\n        \nString\n\n        \nAccess token from general token\n\n        \nHeader\n\n    \n\n    \n\n        \nusername\n\n        \nString\n\n        \nUsername\n\n        \nHeader\n\n    \n\n    \n\n        \npassword\n\n        \nString\n\n        \nPassword\n\n        \nHeader\n\n    \n\n\n\n\n\n{\n    \"diagnostic\":{\n        \"status\":200,\n        \"description\":\"success\"\n    },\n    \"response\":{\n        \"type\":\"Bearer\",\n        \"access_token\":\"JfdjkfhIIDFDbfdjsdfs\",\n    }\n}\n\n\n\nUser Details\n\n\nGET\n\n\nhttp://127.0.0.1:8000/user-details\n\n\n\n    \n\n        \nField\n\n        \nType\n\n        \nDescription\n\n        \nRequest\n\n    \n\n    \n\n        \nAuthorization\n\n        \nString\n\n        \nAccess token login\n\n        \nHeader\n\n    \n\n\n\n\n\n{\n    {\n    \"diagnostic\":{\n        \"status\":200,\n        \"description\":\"success\"\n    },\n    \"response\":{\n        \"user_id\":\"CS0001\",\n        \"identity_type\":\"KTP\",\n        \"identity\":\"5387873485375834\",\n        \"first_name\":\"user\",\n        \"last_name\":\"user\",\n        \"place_birth\":\"jakarta\",\n        \"date_of_bith\":\"2017-03-01\",\n        \"gender\":\"male\",\n        \"address\": {\n            \"country\":\"Indonesia\",\n            \"province\":\"Jakarta\",\n            \"district\":\"Cideng\",\n            \"postal_code\":\"123456\"\n        }\n        \"data\": {\n            \"saldo\":1500000,\n            \"point\":110\n        }\n        \"photo\":\"http://127.0.0.1:8000/user.jpg\"\n    }\n}\n\n\n\nSending Money\n\n\nTranfer money to other user\n\n\ncheck receiver\n\n\nGET\n\n\nhttp://127.0.0.1:8000/check-receiver\n\n\n\n    \n\n        \nField\n\n        \nType\n\n        \nDescription\n\n        \nRequest\n\n    \n\n    \n\n        \nAuthorization\n\n        \nString\n\n        \nAccess token login\n\n        \nHeader\n\n    \n\n    \n\n        \nuser_id\n\n        \nString\n\n        \nUser id receiver\n\n        \nHeader\n\n    \n\n    \n\n        \nnominal\n\n        \nString\n\n        \nNominal Transfer\n\n        \nHeader\n\n    \n\n\n\n\n\n{\n    {\n    \"diagnostic\":{\n        \"status\":200,\n        \"description\":\"success\"\n    },\n    \"response\":{\n        \"name_receiver\":\"User\"\n        \"nominal_transfer\":\"1500000\"\n    }\n}\n\n\n\nTransfer\n\n\nPOST\n\n\nhttp://127.0.0.1:8000/transfer\n\n\n\n    \n\n        \nField\n\n        \nType\n\n        \nDescription\n\n        \nRequest\n\n    \n\n    \n\n        \nAuthorization\n\n        \nString\n\n        \nAccess token login\n\n        \nHeader\n\n    \n\n    \n\n        \nuser_id\n\n        \nString\n\n        \nUser id receiver\n\n        \nHeader\n\n    \n\n    \n\n        \nnominal\n\n        \nString\n\n        \nNominal Transfer\n\n        \nHeader\n\n    \n\n\n\n\n\n{\n    {\n    \"diagnostic\":{\n        \"status\":200,\n        \"description\":\"Transfer success\"\n    },\n}\n\n\n\nRequest Money\n\n\nRequest money from other user\n\n\ncheck receiver\n\n\nGET\n\n\nhttp://127.0.0.1:8000/check-receiver\n\n\n\n    \n\n        \nField\n\n        \nType\n\n        \nDescription\n\n        \nRequest\n\n    \n\n    \n\n        \nAuthorization\n\n        \nString\n\n        \nAccess token login\n\n        \nHeader\n\n    \n\n    \n\n        \nuser_id\n\n        \nString\n\n        \nUser id receiver\n\n        \nHeader\n\n    \n\n    \n\n        \nnominal\n\n        \nString\n\n        \nNominal Transfer\n\n        \nHeader\n\n    \n\n\n\n\n\n{\n    {\n    \"diagnostic\":{\n        \"status\":200,\n        \"description\":\"success\"\n    },\n    \"response\":{\n        \"name_receiver\":\"User\"\n        \"nominal_transfer\":\"1500000\"\n    }\n}\n\n\n\nRequest\n\n\nPOST\n\n\nhttp://127.0.0.1:8000/request\n\n\n\n    \n\n        \nField\n\n        \nType\n\n        \nDescription\n\n        \nRequest\n\n    \n\n    \n\n        \nAuthorization\n\n        \nString\n\n        \nAccess token login\n\n        \nHeader\n\n    \n\n    \n\n        \nuser_id\n\n        \nString\n\n        \nUser id receiver\n\n        \nHeader\n\n    \n\n    \n\n        \nnominal\n\n        \nString\n\n        \nNominal Transfer\n\n        \nHeader\n\n    \n\n\n\n\n\n{\n    {\n    \"diagnostic\":{\n        \"status\":200,\n        \"description\":\"Request success\"\n    },\n}\n\n\n\nStatus Code\n\n\n\n    \n\n        \nCode\n\n        \nDescription\n\n    \n\n    \n\n        \n200\n\n        \nSuccess\n\n    \n\n    \n\n        \n201\n\n        \nRequest Failure\n\n    \n\n    \n\n        \n400\n\n        \nBad Request\n\n    \n\n    \n\n        \n404\n\n        \nNot Found",
+            "title": "Home"
+        },
+        {
+            "location": "/#welcome-to-api-documentation-monad",
+            "text": "This is a simple design and documentation API Monad",
+            "title": "Welcome to API Documentation Monad"
+        },
+        {
+            "location": "/#general-token",
+            "text": "Get general access token to access API  POST  http://127.0.0.1:8000/general-token  \n     \n         Field \n         Type \n         Description \n         Request \n     \n     \n         client_secret \n         String \n         Client secret from monad \n         Header \n       {\n    \"diagnostic\": {\n        \"status\":200,\n        \"description\":\"success\"\n    },\n    \"response\": {\n        \"access_token\":\"khgsdhgsdkjfgiojijigjsfkjgildfjgfildgjl\",\n    }\n}",
+            "title": "General Token"
+        },
+        {
+            "location": "/#login",
+            "text": "POST  http://127.0.0.1:8000/login  \n     \n         Field \n         Type \n         Description \n         Request \n     \n     \n         access_token \n         String \n         Access token from general token \n         Header \n     \n     \n         username \n         String \n         Username \n         Header \n     \n     \n         password \n         String \n         Password \n         Header \n       {\n    \"diagnostic\":{\n        \"status\":200,\n        \"description\":\"success\"\n    },\n    \"response\":{\n        \"type\":\"Bearer\",\n        \"access_token\":\"JfdjkfhIIDFDbfdjsdfs\",\n    }\n}",
+            "title": "Login"
+        },
+        {
+            "location": "/#user-details",
+            "text": "GET  http://127.0.0.1:8000/user-details  \n     \n         Field \n         Type \n         Description \n         Request \n     \n     \n         Authorization \n         String \n         Access token login \n         Header \n       {\n    {\n    \"diagnostic\":{\n        \"status\":200,\n        \"description\":\"success\"\n    },\n    \"response\":{\n        \"user_id\":\"CS0001\",\n        \"identity_type\":\"KTP\",\n        \"identity\":\"5387873485375834\",\n        \"first_name\":\"user\",\n        \"last_name\":\"user\",\n        \"place_birth\":\"jakarta\",\n        \"date_of_bith\":\"2017-03-01\",\n        \"gender\":\"male\",\n        \"address\": {\n            \"country\":\"Indonesia\",\n            \"province\":\"Jakarta\",\n            \"district\":\"Cideng\",\n            \"postal_code\":\"123456\"\n        }\n        \"data\": {\n            \"saldo\":1500000,\n            \"point\":110\n        }\n        \"photo\":\"http://127.0.0.1:8000/user.jpg\"\n    }\n}",
+            "title": "User Details"
+        },
+        {
+            "location": "/#sending-money",
+            "text": "Tranfer money to other user",
+            "title": "Sending Money"
+        },
+        {
+            "location": "/#check-receiver",
+            "text": "GET  http://127.0.0.1:8000/check-receiver  \n     \n         Field \n         Type \n         Description \n         Request \n     \n     \n         Authorization \n         String \n         Access token login \n         Header \n     \n     \n         user_id \n         String \n         User id receiver \n         Header \n     \n     \n         nominal \n         String \n         Nominal Transfer \n         Header \n       {\n    {\n    \"diagnostic\":{\n        \"status\":200,\n        \"description\":\"success\"\n    },\n    \"response\":{\n        \"name_receiver\":\"User\"\n        \"nominal_transfer\":\"1500000\"\n    }\n}",
+            "title": "check receiver"
+        },
+        {
+            "location": "/#transfer",
+            "text": "POST  http://127.0.0.1:8000/transfer  \n     \n         Field \n         Type \n         Description \n         Request \n     \n     \n         Authorization \n         String \n         Access token login \n         Header \n     \n     \n         user_id \n         String \n         User id receiver \n         Header \n     \n     \n         nominal \n         String \n         Nominal Transfer \n         Header \n       {\n    {\n    \"diagnostic\":{\n        \"status\":200,\n        \"description\":\"Transfer success\"\n    },\n}",
+            "title": "Transfer"
+        },
+        {
+            "location": "/#request-money",
+            "text": "Request money from other user",
+            "title": "Request Money"
+        },
+        {
+            "location": "/#check-receiver_1",
+            "text": "GET  http://127.0.0.1:8000/check-receiver  \n     \n         Field \n         Type \n         Description \n         Request \n     \n     \n         Authorization \n         String \n         Access token login \n         Header \n     \n     \n         user_id \n         String \n         User id receiver \n         Header \n     \n     \n         nominal \n         String \n         Nominal Transfer \n         Header \n       {\n    {\n    \"diagnostic\":{\n        \"status\":200,\n        \"description\":\"success\"\n    },\n    \"response\":{\n        \"name_receiver\":\"User\"\n        \"nominal_transfer\":\"1500000\"\n    }\n}",
+            "title": "check receiver"
+        },
+        {
+            "location": "/#request",
+            "text": "POST  http://127.0.0.1:8000/request  \n     \n         Field \n         Type \n         Description \n         Request \n     \n     \n         Authorization \n         String \n         Access token login \n         Header \n     \n     \n         user_id \n         String \n         User id receiver \n         Header \n     \n     \n         nominal \n         String \n         Nominal Transfer \n         Header \n       {\n    {\n    \"diagnostic\":{\n        \"status\":200,\n        \"description\":\"Request success\"\n    },\n}",
+            "title": "Request"
+        },
+        {
+            "location": "/#status-code",
+            "text": "Code \n         Description \n     \n     \n         200 \n         Success \n     \n     \n         201 \n         Request Failure \n     \n     \n         400 \n         Bad Request \n     \n     \n         404 \n         Not Found",
+            "title": "Status Code"
+        },
+        {
+            "location": "/about/",
+            "text": "Deponit lactis\n\n\nIllis alterius\n\n\nLorem markdownum unum auxiliaribus dedisti? Caelo vero confiteor te aerias\nfuerat Mareoticaque nostri despicitur ponti vidit ore verum salientia tamen\ninducto prosecta. Duxit vitio magna, peregrinum utque. Dabit et efficiet nuntia\ninrita adnuit vitaque aut Acasto paternis. Sidera qua montes habeo reposco\nheros.\n\n\n\n\nQui quot munere praeteritae Mota aequore Ligurum adversa; nam. Stipite ureris\nerat tyranni; per alta terras erat moritura mihi. De arcus spectabilis altera\ncursu quaeque metum de vidit ulla gramine\n\nsigno\n?\n\n\n\n\nPrimoque fabula\n\n\nQuem ictus generique; collis numina carnes et galea viae ille corpora certos\nsimilisque membrisque vitium liceret subsequitur mollierant illa. Patriam legem\nquo conveniens lentisciferumque Pelasgi insidiisque deus tibi Aiax id nullus.\nDemittere omne victor huius, per eadem somnum munusque quo sive vaccae deflexi\nviderat. Phrygiisque caesariem auctor germanaeque primum bacae tendit praenuntia\nvixque Ophiusiaque tantum te modo.\n\n\nEt erat silvisque puniceum vivunt est comitate melior obstrepuere erat \nquod\nplumas agat\n. Nec terret imas tumidum, narretque cum, in viscera propensum.\n\n\nE est non\n\n\nRerumque maternaque et simul gaudere, iaculabile bracchia metalla coniunx.\nAmbiguo anas prior \nrevolvor\n: sedens ignorans resolvite mea in \nsparsurus\n\nCumarum! Ut sibi memorabile, praesignis ille arcus etiam viros, ignis nec? Fuit\net \nsua caecis\n sed victoria magis muros ieiunia,\ncrudelia \nest pressos fixit\n. Utar tempora te\nquaeque obversus sanguine, sacerdotis ante feruntur tota non Phoebus lignum,\nrapiunt victor.\n\n\nGeneris nubes\n\n\nNec magni Tritonidis se? Ait tua pariter Latonia alta. Meum malo tendunt\ncolitur, \nhabet\n, Procrusten bina! Quam in esse sub quo illo nisi tuentur? Cum\ndum perpetuum aderat, facitis \nvoluere et\n aere non talibus incursant: mora,\nfallente merito.\n\n\nMarmorea parvo, videtur, vittis pro coercet duplex minaces. Rostro acta\nloquentis, solus sine lumina, vindicat, inminet loquendi. Uti hic verba gesserit\nauctore purpureas; inpediique ut femorum in certe commota quoque in. Cacumen\ninpositum est inquit inquit legem in dentibus, posuitque, in in ilice, grandia\net.\n\n\nEst fama: exuit subit his fit flectitur cornum bracchia resistere tanto\niuventam. Luxuriare similisque effice sequenti caelumque! Saevis revellere\nfaciat. Mitis tuta, pondere naufragus amantes pomum, nihil taurus pectoraque\ndextra?",
+            "title": "About"
+        },
+        {
+            "location": "/about/#deponit-lactis",
+            "text": "",
+            "title": "Deponit lactis"
+        },
+        {
+            "location": "/about/#illis-alterius",
+            "text": "Lorem markdownum unum auxiliaribus dedisti? Caelo vero confiteor te aerias\nfuerat Mareoticaque nostri despicitur ponti vidit ore verum salientia tamen\ninducto prosecta. Duxit vitio magna, peregrinum utque. Dabit et efficiet nuntia\ninrita adnuit vitaque aut Acasto paternis. Sidera qua montes habeo reposco\nheros.   Qui quot munere praeteritae Mota aequore Ligurum adversa; nam. Stipite ureris\nerat tyranni; per alta terras erat moritura mihi. De arcus spectabilis altera\ncursu quaeque metum de vidit ulla gramine signo ?",
+            "title": "Illis alterius"
+        },
+        {
+            "location": "/about/#primoque-fabula",
+            "text": "Quem ictus generique; collis numina carnes et galea viae ille corpora certos\nsimilisque membrisque vitium liceret subsequitur mollierant illa. Patriam legem\nquo conveniens lentisciferumque Pelasgi insidiisque deus tibi Aiax id nullus.\nDemittere omne victor huius, per eadem somnum munusque quo sive vaccae deflexi\nviderat. Phrygiisque caesariem auctor germanaeque primum bacae tendit praenuntia\nvixque Ophiusiaque tantum te modo.  Et erat silvisque puniceum vivunt est comitate melior obstrepuere erat  quod\nplumas agat . Nec terret imas tumidum, narretque cum, in viscera propensum.",
+            "title": "Primoque fabula"
+        },
+        {
+            "location": "/about/#e-est-non",
+            "text": "Rerumque maternaque et simul gaudere, iaculabile bracchia metalla coniunx.\nAmbiguo anas prior  revolvor : sedens ignorans resolvite mea in  sparsurus \nCumarum! Ut sibi memorabile, praesignis ille arcus etiam viros, ignis nec? Fuit\net  sua caecis  sed victoria magis muros ieiunia,\ncrudelia  est pressos fixit . Utar tempora te\nquaeque obversus sanguine, sacerdotis ante feruntur tota non Phoebus lignum,\nrapiunt victor.",
+            "title": "E est non"
+        },
+        {
+            "location": "/about/#generis-nubes",
+            "text": "Nec magni Tritonidis se? Ait tua pariter Latonia alta. Meum malo tendunt\ncolitur,  habet , Procrusten bina! Quam in esse sub quo illo nisi tuentur? Cum\ndum perpetuum aderat, facitis  voluere et  aere non talibus incursant: mora,\nfallente merito.  Marmorea parvo, videtur, vittis pro coercet duplex minaces. Rostro acta\nloquentis, solus sine lumina, vindicat, inminet loquendi. Uti hic verba gesserit\nauctore purpureas; inpediique ut femorum in certe commota quoque in. Cacumen\ninpositum est inquit inquit legem in dentibus, posuitque, in in ilice, grandia\net.  Est fama: exuit subit his fit flectitur cornum bracchia resistere tanto\niuventam. Luxuriare similisque effice sequenti caelumque! Saevis revellere\nfaciat. Mitis tuta, pondere naufragus amantes pomum, nihil taurus pectoraque\ndextra?",
+            "title": "Generis nubes"
+        }
+    ]
+}
